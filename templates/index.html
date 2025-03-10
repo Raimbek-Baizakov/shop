@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Онлайн магазин</title>
+{% endblock %}
+
+{% block body %}
+<main>
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h1 class="display-4 fw-normal text-body-emphasis">Добро пожаловать в интернет-магазин электроники!</h1>
+        <p class="fs-5 text-body-secondary">Мы предлагаем широкий ассортимент современной электроники для всех ваших
+            потребностей. Независимо от того, ищете ли вы новейший смартфон, мощный ноутбук, качественные аксессуары или
+            умные устройства для вашего дома, у нас есть всё, что нужно!</p>
+    </div>
+
+    <div class="container">
+        <div class="row g-4">
+            {% for el in data %}
+            <div class="col-md-3">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">{{ el.name }}</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">{{ el.price }}<small
+                                class="text-body-secondary fw-light"> тенге</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Доставка по всему КЗ</li>
+                            <li>Гарантия 1 год</li>
+                            <li>raim@gmail.com</li>
+                            <li>Более 100 отзывов</li>
+                        </ul>
+                        <a href="#" class="w-100 btn btn-lg btn-primary">Купить</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+{% endblock %}
